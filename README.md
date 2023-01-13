@@ -57,8 +57,72 @@ Languages: 🇬🇧 🇫🇷 🇷🇺 🇺🇦 🇧🇾 🇨🇳
 <a name="Настройка">
 
 ## Как использовать в своем проекте
-ропорпрп
+
+### Для запуска локально
+1. Создать в корне проекта папку `notifications`.
+2. <a href="https://github.com/qa-guru/allure-notifications/releases" target="_blank">Скачать</a> актуальную версию файла `allure-notifications-version.jar`, и разместить его в папке `notifications` в своем проекте.
+3. В папке `notifications` создать файл `config.json` со средующей структурой (оставить раздел `Base` и те мессенджеры, на которые требуется отправлять оповещения): 
+```
+{
+  "base": {
+    "logo": "",
+    "project": "",
+    "environment": "",
+    "comment": "",
+    "reportLink": "",
+    "language": "ru",
+    "allureFolder": "",
+    "enableChart": false
+  },
+  "telegram": {
+    "token": "",
+    "chat": "",
+    "replyTo": ""
+  },
+  "slack": {
+    "token": "",
+    "chat": "",
+    "replyTo": ""
+  },
+  "mattermost": {
+    "url": "",
+    "token": "",
+    "chat": ""
+  },
+  "skype": {
+    "appId": "",
+    "appSecret": "",
+    "serviceUrl": "",
+    "conversationId": "",
+    "botId": "",
+    "botName": ""
+  },
+  "mail": {
+    "host": "",
+    "port": "",
+    "username": "",
+    "password": "",
+    "securityProtocol": null,
+    "from": "",
+    "recipient": ""
+  },
+  "proxy": {
+    "host": "",
+    "port": 0,
+    "username": "",
+    "password": ""
+  }
+}
+```
  
  
+ 
+ 
+Запустить выполнение из командной строки:
+```
+ java \
+"-DconfigFile=${PATH_TO_FILE}" \
+-jar allure-notifications-4.1.jar
+``` 
  
 
