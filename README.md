@@ -142,45 +142,13 @@ Languages: 🇬🇧 🇫🇷 🇷🇺 🇺🇦 🇧🇾 🇨🇳
 + `enableChart` - требуется ли отображать диаграмму (варианты: true / false)
 + `logo` - путь к файлу с логотипом (если заполнено, то в левом верхнем углу диаграммы будет отображаться соответствующий логотип). Можно не заполнять этот параметр, а просто положить логотип в виде файла logo.png в корень проекта, результат будет такой же. 
 
-6. Заполнить в файле `config.json` блоки с информацией о мессенджерах
-
-6.1. Telegram 
-
-Пример файла `config.json` для отправки оповещения в Telegram
-```
- {
-  "base": {
-    "logo": "logo.png",
-    "project": "some project",
-    "environment": "env",
-    "comment": "Выполнение тестов завершено",
-    "reportLink": "",
-    "language": "en",
-    "allureFolder": "allure-report/",
-    "enableChart": true
-  },
-  "telegram": {
-    "token": "4479489035:AHWgMSjYc1fD0vTy6x9Ldsd6NQrtT_VfHRE",
-    "chat": "892711836",
-    "replyTo": ""
-  }
-}
-```
-Примечание:
-+ Порядок заполнения блока `base` показан в предыдущем пункте
-+ `token` и `chat` - это токен бота и идентификатор чата (в примере выше указаны несуществующие значения, так как это является конфиденциальной информацией)
-+ `replyTo` - используется если нужно, чтобы уведомление пришло в виде ответа на определенное сообщение
-
- 
+6. Заполнить в файле `config.json` блоки с информацией о мессенджерах:
 + <a href="https://github.com/qa-guru/allure-notifications/wiki/Telegram-configuration" target="_blank">Telegram config</a>
- 
-6.2. Остальные мессенджеры
 + <a href="https://github.com/qa-guru/allure-notifications/wiki/Slack-configuration" target="_blank">Slack config</a>
 + <a href="https://github.com/qa-guru/allure-notifications/wiki/Email-configuration" target="_blank">Email config</a>
 + <a href="https://github.com/qa-guru/allure-notifications/wiki/Skype-configuration" target="_blank">Skype config</a>
 + <a href="https://github.com/qa-guru/allure-notifications/wiki/Mattermost-configuration" target="_blank">Mattermost config</a>
 
- 
 7. Выполнить в терминале следующую команду:
 ```
 java "-DconfigFile=notifications/config.json" -jar notifications/allure-notifications-4.2.1.jar
