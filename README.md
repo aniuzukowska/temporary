@@ -8,8 +8,10 @@ Languages: 🇬🇧 🇫🇷 🇷🇺 🇺🇦 🇧🇾 🇨🇳
 + [Как выглядят оповещения](#Примеры)
 + [Как использовать в своем проекте:](#Настройка)
    + [Для запуска локально](#Локально)
-
-
+   + [Для запуска из Jenkins](#Jenkins)
++ [Особенности заполнения файла config.json в зависимости от выбранного мессенджера:](#config)
+   + [Telegram](#Telegram)
+   + [Прочие мессенджеры](#Other)
  
 <a name="Принцип">
  
@@ -64,7 +66,7 @@ Languages: 🇬🇧 🇫🇷 🇷🇺 🇺🇦 🇧🇾 🇨🇳
 1. Для локальной отладки нужно установить java (для запуска в Jenkins она не понадобится)
 2. Создать в корне проекта папку `notifications`.
 3. <a href="https://github.com/qa-guru/allure-notifications/releases" target="_blank">Скачать</a> актуальную версию файла `allure-notifications-version.jar`, и разместить его в папке `notifications` в своем проекте.
-4. В папке `notifications` создать файл `config.json` со следующей структурой (оставить раздел `Base` и те мессенджеры, на которые требуется отправлять оповещения): 
+4. В папке `notifications` создать файл `config.json` со следующей структурой (оставить раздел `Base` и тот мессенджер, на который требуется отправлять оповещения): 
 ```
 {
   "base": {
@@ -142,13 +144,8 @@ Languages: 🇬🇧 🇫🇷 🇷🇺 🇺🇦 🇧🇾 🇨🇳
 + `enableChart` - требуется ли отображать диаграмму (варианты: true / false)
 + `logo` - путь к файлу с логотипом (если заполнено, то в левом верхнем углу диаграммы будет отображаться соответствующий логотип). Можно не заполнять этот параметр, а просто положить логотип в виде файла logo.png в корень проекта, результат будет такой же. 
 
-6. Заполнить в файле `config.json` блоки с информацией о мессенджерах:
-+ <a href="https://github.com/qa-guru/allure-notifications/wiki/Telegram-configuration" target="_blank">Telegram config</a>
-+ <a href="https://github.com/qa-guru/allure-notifications/wiki/Slack-configuration" target="_blank">Slack config</a>
-+ <a href="https://github.com/qa-guru/allure-notifications/wiki/Email-configuration" target="_blank">Email config</a>
-+ <a href="https://github.com/qa-guru/allure-notifications/wiki/Skype-configuration" target="_blank">Skype config</a>
-+ <a href="https://github.com/qa-guru/allure-notifications/wiki/Mattermost-configuration" target="_blank">Mattermost config</a>
-
+6. Заполнить в файле `config.json` блок с информацией о выбранном мессенджере: [особенности заполнения файла config.json в зависимости от выбранного мессенджера](#config)
+ 
 7. Выполнить в терминале следующую команду:
 ```
 java "-DconfigFile=notifications/config.json" -jar notifications/allure-notifications-4.2.1.jar
@@ -164,3 +161,25 @@ java "-DconfigFile=notifications/config.json" -jar notifications/allure-notifica
 <img width="356" alt="image" src="https://user-images.githubusercontent.com/109241600/213270834-008f90a7-d249-43a8-a997-6a9827c8f1fd.png">
  
 
+<a name="Jenkins">
+ 
+### Для запуска из Jenkins
+
+
+<a name="config">
+
+## Особенности заполнения файла config.json в зависимости от выбранного мессенджера
+
+<a name="Telegram">
+ 
+### Telegram
++ <a href="https://github.com/qa-guru/knowledge-base/wiki/11.-Телеграм-бот.-Отправляем-уведомления-о-результатах-прохождения-тестов" target="_blank">Telegram config</a>
+
+<a name="Other">
+ 
+### Прочие мессенджеры
+
++ <a href="https://github.com/qa-guru/allure-notifications/wiki/Slack-configuration" target="_blank">Slack config</a>
++ <a href="https://github.com/qa-guru/allure-notifications/wiki/Email-configuration" target="_blank">Email config</a>
++ <a href="https://github.com/qa-guru/allure-notifications/wiki/Skype-configuration" target="_blank">Skype config</a>
++ <a href="https://github.com/qa-guru/allure-notifications/wiki/Mattermost-configuration" target="_blank">Mattermost config</a>
