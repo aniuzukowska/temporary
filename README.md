@@ -1,5 +1,5 @@
 # Allure notifications
-**Allure notifications** - это библиотека, которая позволяет выполнять автоматическое оповещение о результатах прохождения автотестов, которое направляется в нужный вам мессенджер (Telegram, Slack, Skype, Email, Mattermost).
+**Allure notifications** - это библиотека, позволяющая выполнять автоматическое оповещение о результатах прохождения автотестов, которое направляется в нужный вам мессенджер (Telegram, Slack, Skype, Email, Mattermost).
 
 Languages: 🇬🇧 🇫🇷 🇷🇺 🇺🇦 🇧🇾 🇨🇳
  
@@ -118,7 +118,26 @@ Languages: 🇬🇧 🇫🇷 🇷🇺 🇺🇦 🇧🇾 🇨🇳
 }
 ```
 
-Как заполнить данные файла `config.json` в зависимости от вида мессенджера:
+4. Заполнить в файле `config.json` блок `Base`: 
+
+Как выглядит пустой шаблон блока `Base`:
+```
+"base": {
+    "logo": "",
+    "project": "",
+    "environment": "",
+    "comment": "",
+    "reportLink": "",
+    "language": "ru",
+    "allureFolder": "",
+    "enableChart": false
+  }
+```  
+Порядок заполнения:
+
+  
+
+5. Заполнить файл `config.json` в зависимости от вида мессенджера:
 + <a href="https://github.com/qa-guru/allure-notifications/wiki/Telegram-configuration" target="_blank">Telegram config</a>
 + <a href="https://github.com/qa-guru/allure-notifications/wiki/Slack-configuration" target="_blank">Slack config</a>
 + <a href="https://github.com/qa-guru/allure-notifications/wiki/Email-configuration" target="_blank">Email config</a>
@@ -126,7 +145,7 @@ Languages: 🇬🇧 🇫🇷 🇷🇺 🇺🇦 🇧🇾 🇨🇳
 + <a href="https://github.com/qa-guru/allure-notifications/wiki/Mattermost-configuration" target="_blank">Mattermost config</a>
 
 
-4. Выполнить в командной строке следующую команду:
+6. Выполнить в командной строке следующую команду:
 ```
  java "-DconfigFile=${PATH_TO_FILE}" -jar allure-notifications-4.2.1.jar
 ``` 
